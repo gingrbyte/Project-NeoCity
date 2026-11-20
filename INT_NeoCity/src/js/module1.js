@@ -1,12 +1,16 @@
 // Const
-const API_URL = "https://catfact.ninja/fact?max_length=70";
+const API_URL = "https://catfact.ninja/fact?max_length=120";
 const factElement = document.querySelector("#cat-fact");
 
 // Let
 let isLoading = true;
 
 // Arrow function + Template literal
-const renderFact = ({ fact }) => `Cat fact: ${fact}`;
+const renderFact = ({ fact }) => `
+    Did you know that...
+    
+    ${fact}
+    `;
 
 // Async/await + Fetch
 const loadFact = async () => {
@@ -15,12 +19,17 @@ const loadFact = async () => {
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const data = await response.json();
     factElement.textContent = renderFact(data);
-  } catch (error) {
+    // console.log(data);
+  }
+  catch (error) {
     console.error("Error:", error);
     factElement.textContent = "Could not load a fact.";
-  } finally {
+  }
+  finally {
     isLoading = false;
   }
 };
 
 loadFact();
+
+

@@ -1,18 +1,12 @@
 /* ===================================================== RESET ===================================================== */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    user-select: none;
-    -webkit-user-drag: none;
-}
+* {margin: 0; padding: 0; box-sizing: border-box; user-select: none; -webkit-user-drag: none;}
 
 
 /* ===================================================== BODY ===================================================== */
 
 body {
-    color: blueviolet;
+    color: #000000;
     background: radial-gradient(circle, #232323, #000);
     height: 100vh;
     width: 100%;
@@ -39,17 +33,8 @@ body {
 
 /*----------------- Module Cell 1 -----------------*/
 
-.module-1-cell, .module-2-cell, .module-3-cell {
-    width: 300px;
-    height: 300px;
-}
-
-.module-1-cell {
-    grid-area: module-1;
-    /* border: 1px solid lightgray; */
-
-    position: relative;
-}
+.module-1-cell, .module-2-cell, .module-3-cell {width: 300px;height: 300px;}
+.module-1-cell {grid-area: module-1; position: relative;}
 
 /* Book image */
 #module-1-img {
@@ -63,36 +48,31 @@ body {
     z-index: 1;
 }
 
-/* Text overlay */
-.module-1-text {
+/* Book - Text overlay */
+.module-1-book-left, .module-1-book-right {
     width: 25%;
-    height: 100%;
+    top: 35px;
+    height: 200px;
     position: absolute;
-    top: 20px;
-    left: 70px;
-    
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    font-size: 8px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    font-size: 9px;
     overflow: hidden;
-
     color: #000000;
-
-    transform: rotateX(60deg) rotateY(-3deg) rotateZ(3deg);
-
-    
     z-index: 2;
+}
+.module-1-book-left {
+    left: 72px;
+    transform: rotateX(60deg) rotateY(-3deg) rotateZ(3deg);
+}
+.module-1-book-right {
+    right: 68px;
+    transform: rotateX(60deg) rotateY(1deg) rotateZ(-2deg);
 }
 
 /*----------------- Module Cell 2 -----------------*/
-.module-2-cell {
-    grid-area: module-2;
-    border: 1px solid lightgray;
-}
+.module-2-cell {grid-area: module-2; border: 1px solid lightgray;}
 
 /*----------------- Module Cell 3 -----------------*/
-.module-3-cell {
-    grid-area: module-3;
-    border: 1px solid lightgray;
-}
+.module-3-cell {grid-area: module-3; border: 1px solid lightgray;}
