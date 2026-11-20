@@ -15,7 +15,7 @@ const loadProfile = async () => {
     const data = await response.json();
     document.querySelector(".module-1-text").innerHTML = renderProfile(data);
   } catch (error) {
-    console.error("Could not load profile:", error);
+    console.error("Error:", error);
   }
 };
 
